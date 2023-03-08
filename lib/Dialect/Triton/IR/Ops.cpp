@@ -187,7 +187,7 @@ void LoadOp::build(::mlir::OpBuilder &builder, ::mlir::OperationState &state,
 
 //-- TransOp --
 mlir::LogicalResult mlir::triton::TransOp::inferReturnTypes(
-    MLIRContext *context, Optional<Location> location, ValueRange operands,
+    MLIRContext *context, std::optional<Location> location, ValueRange operands,
     DictionaryAttr attributes, RegionRange regions,
     SmallVectorImpl<Type> &inferredReturnTypes) {
   // type is the same as the input
@@ -214,7 +214,7 @@ mlir::LogicalResult mlir::triton::TransOp::inferReturnTypes(
 
 //-- DotOp --
 mlir::LogicalResult mlir::triton::DotOp::inferReturnTypes(
-    MLIRContext *context, Optional<Location> location, ValueRange operands,
+    MLIRContext *context, std::optional<Location> location, ValueRange operands,
     DictionaryAttr attributes, RegionRange regions,
     SmallVectorImpl<Type> &inferredReturnTypes) {
   // type is the same as the accumulator
@@ -239,7 +239,7 @@ mlir::LogicalResult mlir::triton::DotOp::inferReturnTypes(
 
 //-- ReduceOp --
 mlir::LogicalResult mlir::triton::ReduceOp::inferReturnTypes(
-    MLIRContext *context, Optional<Location> location, ValueRange operands,
+    MLIRContext *context, std::optional<Location> location, ValueRange operands,
     DictionaryAttr attributes, RegionRange regions,
     SmallVectorImpl<Type> &inferredReturnTypes) {
   // infer shape
@@ -301,7 +301,7 @@ OpFoldResult SplatOp::fold(FoldAdaptor adaptor) {
 
 //-- ExpandDimsOp --
 mlir::LogicalResult mlir::triton::ExpandDimsOp::inferReturnTypes(
-    MLIRContext *context, Optional<Location> loc, ValueRange operands,
+    MLIRContext *context, std::optional<Location> loc, ValueRange operands,
     DictionaryAttr attributes, RegionRange regions,
     SmallVectorImpl<Type> &inferredReturnTypes) {
   // infer shape
